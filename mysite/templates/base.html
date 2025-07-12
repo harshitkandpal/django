@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Maharaja Bhojan{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="brand" style="text-decoration: none;">Maharaja Bhavan</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'food:items' %}">Food Menu</a></li>
+                <li><a href="{% url 'hotel:rooms' %}">Hotel Booking</a></li>
+                <li><a href="{% url 'event:events' %}">Event Booking</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Maharaja Bhojan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

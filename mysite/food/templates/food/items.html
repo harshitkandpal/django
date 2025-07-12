@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Restaurant Menu{% endblock %}
+
+
+{% load static %}
+{% block content %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static '/food/items.css' %}">
+    <div class="menu-card">
+        {% if items %}
+            {% for item in items %}
+                <div class="menu-item" onclick="location.href=`{% url 'food:item_detail' item.id %}`">
+                    <div class="menu-text">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.description|default:"Delicious and authentic dish" }}</p>
+                        <span class="price">₹{{ item.price }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty-menu">
+                Menu is empty.
+            </div>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>© 2025 Maharaja Bhojan. All rights reserved.</p>
+    </footer>
+{% endblock %}
+
+{% endblock %}

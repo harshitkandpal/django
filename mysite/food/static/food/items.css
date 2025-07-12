@@ -1,0 +1,73 @@
+body {
+    font-family: 'Merriweather', serif;
+    background: url('/static/food/bg-pattern.jpg') repeat;
+    background-color: #fff8f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #7b3f00;
+    color: white;
+    padding: 20px;
+    border-bottom: 5px solid #c49a6c;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.menu-card {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fffdf5;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    border-bottom: 1px solid #eee;
+    padding: 16px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #fff4e6;
+}
+
+.menu-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #b03a2e;
+}
+
+.menu-text p {
+    margin: 5px 0 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    color: #2e7d32;
+    font-size: 1.2rem;
+}
+
+.empty-menu {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #999;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
