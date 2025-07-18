@@ -1,18 +1,19 @@
 from django.shortcuts import render
+from .models import Event
 
 # Create your views here.
-class Event:
-    def __init__(self, name, date, location):
-        self.name = name
-        self.date = date
-        self.location = location
+class EventView:
 
-    @staticmethod
     def events(request):
-        event1 = Event("Music Concert", "2023-12-01", "City Hall")
-        event2 = Event("Art Exhibition", "2023-12-15", "Art Gallery")
-        event3 = Event("Food Festival", "2023-12-20", "Central Park")
+        events = Event.objects.all()
         context = {
-            'events': [event1, event2, event3]
+            'events': events,
         }
         return render(request, 'event/events.html', context)
+
+    def event_details(request, event_id):
+        event = Event.objects.get(id=event_id)
+        context = {
+            'event': event,
+        }
+        return render(request, 'event/event_details.html', context)

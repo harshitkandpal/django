@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ room.name }} Details{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="hero">
+        <h1>{{ room.room_type }}</h1>
+        <p><strong>Room No:</strong> {{ room.room_number }}</p>
+        <p><strong>Price per hour:</strong> ₹{{ room.price }}</p>
+        <p><strong>Capacity:</strong> {{ room.max_occupancy }} person{{ room.max_occupancy|pluralize }}</p>
+        <p><strong>Availability:</strong> 
+            {% if room.is_available %}
+                <span style="color: green; font-weight: bold;">Available</span>
+            {% else %}
+                <span style="color: red; font-weight: bold;">Booked</span>
+            {% endif %}
+        </p>
+        {% if room.description %}
+            <p style="margin-top: 20px;">{{ room.description }}</p>
+        {% endif %}
+        <a href="{% url 'hotel:rooms' %}" class="btn" style="margin-top: 25px; display: inline-block;">← Back to Rooms</a>
+    </div>
+</div>
+{% endblock %}

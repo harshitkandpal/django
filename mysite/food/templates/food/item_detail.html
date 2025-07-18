@@ -8,11 +8,13 @@
 
     <link rel="stylesheet" href="{% static 'food/item_detail.css' %}">
 {% endblock %}
-<div class="item-detail">
-    <h1>{{ item.name }}</h1>
-    <p><strong>Description:</strong> {{ item.description }}</p>
-    <p><strong>Price:</strong> ₹{{ item.price }}</p>
-    <a href="{% url 'food:items' %}" class="back-link">← Back to Menu</a>
+<div class="main-content">
+    <div class="hero">
+        <h1>{{ item.name }}</h1>
+        <p><strong>Price:</strong> ₹{{ item.price }}</p>
+        <p><strong>Description:</strong> {{ item.description }}</p>
+        <a href="{% url 'food:items' %}" class="btn" style="margin-top: 25px; display: inline-block;">← Back to Items</a>
+    </div>
 </div>
 {% endblock %}
 

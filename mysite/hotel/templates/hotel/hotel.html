@@ -7,9 +7,10 @@
 <h1>Our Rooms</h1>
 <div class="card-container">
     {% for room in rooms %}
-        <div class="card">
-            <h2>{{ room.name }}</h2>
-            <p><strong>Location:</strong> {{ room.location }}</p>
+        <div class="card" onclick="location.href=`{% url 'hotel:room_detail' room.id %}`">
+            <h2>{{ room.room_type }}</h2>
+            <p><strong>Room No:</strong> {{ room.room_number }}</p>
+            <p><strong>Max Occupancy:</strong> {{ room.max_occupancy }}</p>
             <p><strong>Price:</strong> ₹{{ room.price }}</p>
         </div>
     {% endfor %}
