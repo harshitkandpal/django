@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'food.apps.FoodConfig',
     'hotel.apps.HotelConfig',
     'event.apps.EventConfig',
+    'users.apps.UsersConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
